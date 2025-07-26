@@ -5,6 +5,7 @@ import { CountDown } from './components/CountDown';
 
 import './styles/theme.css';
 import './styles/global.css';
+import { Input } from './components/Input';
 
 export function App() {
   return (
@@ -19,6 +20,19 @@ export function App() {
 
       <Container>
         <CountDown />
+      </Container>
+
+      <Container>
+        <form className='form'>
+          <div className='formRow'>
+            <Input
+              id='input'
+              labelText='task:'
+              type='text'
+              placeholder='Ex.: estudar para a prova'
+            />
+          </div>
+        </form>
       </Container>
     </>
   );
