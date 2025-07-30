@@ -6,6 +6,7 @@ import { CountDown } from './components/CountDown';
 import './styles/theme.css';
 import './styles/global.css';
 import { Input } from './components/Input';
+import { Cycles } from './components/Cycles';
 
 export function App() {
   return (
@@ -31,6 +32,14 @@ export function App() {
               type='text'
               placeholder='Ex.: estudar para a prova'
             />
+          </div>
+
+          <div className='formRow'>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+
+          <div className='formRow'>
+            <Cycles />
           </div>
         </form>
       </Container>
