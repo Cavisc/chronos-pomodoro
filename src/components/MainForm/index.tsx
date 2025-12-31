@@ -2,14 +2,14 @@ import { PlayCircleIcon } from 'lucide-react';
 import { Button } from '../Button';
 import { Cycles } from '../Cycles';
 import { Input } from '../Input';
-import { useState } from 'react';
+import { useRef } from 'react';
 
 export function MainForm() {
-  const [taskName, setTaskName] = useState('');
+  const taskName = useRef<HTMLInputElement>(null);
 
   function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log('Submitted:', taskName);
+    console.log('Submitted:', taskName.current?.value);
   }
 
   return (
@@ -20,8 +20,7 @@ export function MainForm() {
           labelText='task:'
           type='text'
           placeholder='Ex.: estudar para a prova'
-          value={taskName}
-          onChange={e => setTaskName(e.target.value)}
+          ref={taskName}
         />
       </div>
 
