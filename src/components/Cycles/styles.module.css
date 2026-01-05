@@ -17,14 +17,14 @@
   width: 2rem;
 }
 
-.workCycle {
+.workTime {
   background-color: var(--warning);
 }
 
-.shortBreakCycle {
+.shortBreakTime {
   background-color: var(--success);
 }
 
-.longBreakCycle {
+.longBreakTime {
   background-color: var(--info);
 }
