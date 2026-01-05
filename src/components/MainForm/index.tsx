@@ -1,13 +1,13 @@
-import { useRef } from 'react';
 import { PlayCircleIcon } from 'lucide-react';
+import { useRef } from 'react';
+import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
+import type { TaskModel } from '../../models/TaskModel';
+import { formatSecondsToMinutes } from '../../utils/formatSecondsToMinutes';
+import { getNextCycle } from '../../utils/getNextCycle';
+import { getNextCycleType } from '../../utils/getNextCycleType';
 import { Button } from '../Button';
 import { Cycles } from '../Cycles';
 import { Input } from '../Input';
-import type { TaskModel } from '../../models/TaskModel';
-import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
-import { getNextCycle } from '../../utils/getNextCycle';
-import { getNextCycleType } from '../../utils/getNextCycleType';
-import { formatSecondsToMinutes } from '../../utils/formatSecondsToMinutes';
 
 export function MainForm() {
   const { state, setState } = useTaskContext();
@@ -62,6 +62,7 @@ export function MainForm() {
           type='text'
           placeholder='Ex.: estudar para a prova'
           ref={taskNameInput}
+          disabled={!!state.activeTask}
         />
       </div>
 
