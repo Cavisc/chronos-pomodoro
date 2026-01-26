@@ -27,7 +27,6 @@ export function MainForm() {
     const taskName = taskNameInput.current.value.trim();
 
     if (!taskName) {
-      showMessage.dismiss();
       showMessage.warn('Digite o nome da tarefa');
       return;
     }
@@ -44,7 +43,6 @@ export function MainForm() {
 
     dispatch({ type: TaskActionTypes.START_TASK, payload: newTask });
 
-    showMessage.dismiss();
     showMessage.success('Tarefa iniciada com sucesso!');
   }
 
