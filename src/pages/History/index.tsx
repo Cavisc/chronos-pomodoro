@@ -6,6 +6,7 @@ import { MainTemplate } from '../../templates/MainTemplate';
 
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
 import { formatDate } from '../../utils/formatDate';
+import { getTaskStatus } from '../../utils/getTaskStatus';
 import styles from './styles.module.css';
 
 export function History() {
@@ -47,7 +48,7 @@ export function History() {
                     <td>{task.name}</td>
                     <td>{task.duration}min</td>
                     <td>{formatDate(task.startDate)}</td>
-                    <td>{task.interruptDate}</td>
+                    <td>{getTaskStatus(task, state.activeTask)}</td>
                     <td>{task.type}</td>
                   </tr>
                 );
