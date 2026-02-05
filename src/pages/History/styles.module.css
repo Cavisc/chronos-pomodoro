@@ -44,3 +44,8 @@
 .thSort:hover {
   filter: brightness(80%);
 }
+
+.emptyTasksMessage {
+  font-weight: bold;
+  text-align: center;
+}
