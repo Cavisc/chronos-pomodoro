@@ -1,5 +1,5 @@
 import { SaveIcon } from 'lucide-react';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { showMessage } from '../../adapters/showMessage';
 import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
@@ -10,6 +10,10 @@ import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
 import { MainTemplate } from '../../templates/MainTemplate';
 
 export function Settings() {
+  useEffect(() => {
+    document.title = 'Configurações | Chronos Pomodoro';
+  }, []);
+
   const { state, dispatch } = useTaskContext();
 
   const workTimeInputRef = useRef<HTMLInputElement>(null);

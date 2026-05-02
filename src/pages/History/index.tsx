@@ -14,6 +14,10 @@ import { sortTasks, type SortTasksOptions } from '../../utils/sortTasks';
 import styles from './styles.module.css';
 
 export function History() {
+  useEffect(() => {
+    document.title = 'History | Chronos Pomodoro';
+  }, []);
+
   const { state, dispatch } = useTaskContext();
   const [confirmClearHistory, setConfirmClearHistory] = useState(false);
   const hasTasks = state.tasks.length > 0;
